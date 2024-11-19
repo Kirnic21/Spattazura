@@ -14,11 +14,16 @@
     <div class = "user">
         <ul class = "user">
             <% users.forEach((user)=>{ %>
-                <li class = "user"><%= user.name%></li>
+                <li class = "user"><a href = "/create"><%= user.name%></a></li>
             <% }); %>
             
         </ul>
     </div>
+    <form action = "/search" method ="GET">
+        <label for ="name">Nome</label>
+        <input type = "text" name = "nome" id ="nome">
+        <input type = "submit">
+    </form>
     
 
     </body>
