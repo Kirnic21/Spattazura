@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Create User</title>
+    <link rel="stylesheet" href="./create.css">
 </head>
 <body>
     <form action="/create" method="POST">
-        <label for="name">Name</label>
-        <input placeholder="e.g Marcelo " type="text" name="name" id="name">
-        <input type = "submit">
-      </form>
-      <form action="/search" method="GET">
-          <label for="name">Name</label>
-          <input type = "submit">
-        </form>
+        <label for="username">Username</label>
+        <input placeholder="e.g. Marcelo" type="text" name="username" id="username" required>
+        
+        <label for="cpf">CPF</label>
+        <input placeholder="e.g. 123.456.789-00" type="text" name="cpf" id="cpf" required>
+        
+        <label for="telefone">Telefone</label>
+        <input placeholder="e.g. (11) 91234-5678" type="text" name="telefone" id="telefone" required>
+        
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" required>
+        
+        <button type="submit">Create User</button>
+    </form>
 </body>
 </html>

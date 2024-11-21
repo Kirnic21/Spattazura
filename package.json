@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Kirnic21/Spattazura#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "pg": "^8.13.1"
   }
 }

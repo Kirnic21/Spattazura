@@ -3,28 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Usuarios Ativos</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header class = "header">
-    <h1 class = "title">Usuarios Ativos</h1>
-    <h4 class = "subtitle">Lixeiros </h2>
+    <h1 class="titulo">Spattazura</h1>
+    <header class="header">
+        <h1 class="title">Usuarios Ativos</h1>
+        <h4 class="subtitle">Lixeiros</h4>
     </header>
-    <div class = "user">
-        <ul class = "user">
-            <% users.forEach((user)=>{ %>
-                <li class = "user"><a href = "/create"><%= user.name%></a></li>
-            <% }); %>
-            
-        </ul>
-    </div>
-    <form action = "/search" method ="GET">
-        <label for ="name">Nome</label>
-        <input type = "text" name = "nome" id ="nome">
-        <input type = "submit">
-    </form>
-    
 
-    </body>
+    <!-- Formulário de busca -->
+    <div class="search">
+        <form action="/search" method="GET">
+            <label for="nome">Buscar por nome 
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+
+    <!-- Botão para criar usuário -->
+    <div class="create">
+        <button><a href="/create">Criar usuário</a></button>
+    </div>
+
+    <!-- Tabela para exibir usuários -->
+    <div class="user">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% (users || []).forEach((user) => { %>
+                    <tr>
+                        <td><%= user.username %></td>
+                        <td><%= user.cpf %></td>
+                        <td><%= user.telefone %></td>
+                        <td>
+                            <a href="/<%= user.id %>/update">Editar</a> | 
+                            <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>
