@@ -1,4 +1,11 @@
+require('dotenv').config(); // Load environment variables
+
 const { Pool } = require("pg");
+
 module.exports = new Pool({
-connectionString: "postgresql://kirnic:9292Hugo@localhost:5432/spattazura"
-  });
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  host: process.env.PG_HOST,
+  port: process.env.PG_PORT,
+  database: process.env.PG_NAME
+});
