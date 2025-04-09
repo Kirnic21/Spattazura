@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Cooperativa</title>
+</head>
+<body>
+  <h1>Cadastro de Cooperativa</h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <% if (success) { %>
+    <p style="color: green;"><%= success %></p>
+  <% } %>
+
+  <form action="/cadastro-cooperativa" method="POST">
+    <label for="usuario">Usuário:</label>
+    <input type="text" name="usuario" id="usuario" required><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha" id="senha" required><br>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <p><a href="/login">Voltar para o login</a></p>
+</body>
+</html>

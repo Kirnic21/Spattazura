@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login do Coletor</title>
+</head>
+<body>
+  <h1>Login - Coletor</h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/coletor" method="POST">
+    <label for="cpf">CPF:</label>
+    <input type="text" name="cpf" required>
+
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha" required>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <hr>
+
+  <p>Não é coletor?</p>
+  <a href="/cooperativa/cadastro">Sou Cooperativa</a> |
+  <a href="/comercio/cadastro">Sou Comércio</a>
+  <p>Cadastre-se como coletor</p>
+  <a href="/coletor/cadastroColetor.ejs"></a>
+</body>
+</html>

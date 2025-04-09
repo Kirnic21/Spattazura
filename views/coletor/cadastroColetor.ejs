@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Coletor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .msg {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    form div {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de Coletor</h1>
+
+  <% if (error) { %>
+    <div class="msg error"><%= error %></div>
+  <% } %>
+
+  <% if (success) { %>
+    <div class="msg success"><%= success %></div>
+  <% } %>
+
+  <form action="cadastro/coletor" method="POST">
+    <div>
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" required>
+    </div>
+
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div>
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" name="telefone">
+    </div>
+
+    <div>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+    </div>
+
+      <button type="submit">Cadastrar</button>
+    </div>
+  </form>
+</body>
+</html>
